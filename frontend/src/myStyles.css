@@ -1,0 +1,768 @@
+@font-face {
+    font-family: 'Satoshi-Bold';
+    src: url('fonts/Satoshi-Bold.woff2') format('woff2'),
+    url('fonts/Satoshi-Bold.woff') format('woff'),
+    url('fonts/Satoshi-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Satoshi-Black';
+    src: url('fonts/Satoshi-Black.woff2') format('woff2'),
+    url('fonts/Satoshi-Black.woff') format('woff'),
+    url('fonts/Satoshi-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Satoshi-Regular';
+    src: url('fonts/Satoshi-Regular.woff2') format('woff2'),
+    url('fonts/Satoshi-Regular.woff') format('woff'),
+    url('fonts/Satoshi-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+body {
+    /*noinspection CssNoGenericFontName*/
+    font-family: 'Satoshi-Regular';
+    margin: 0;
+    color: #262626;
+}
+
+.all-gray {
+    /*noinspection CssNoGenericFontName*/
+    font-family: 'Satoshi-Regular';
+    font-size: 12px;
+    color: #c7c7c7;
+}
+
+.basic-link-help {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.basic-link-help > div::after {
+    content: " \2022\0020 ";
+}
+
+.homepage-box-container {
+    display: grid;
+    grid-template-columns: 333px 1fr;
+    grid-gap: 0;
+}
+
+.homepage-navbar {
+    z-index: 10;
+    position: fixed;
+    border: 1px solid #DBDBDB;
+    background-color: white;
+    width: 333px;
+    height: 100vh;
+    padding: 8px 12px 20px 12px;
+}
+
+.homepage-main-area {
+    display: grid;
+    margin-left: 15%;
+    grid-template-columns: auto 470px 320px auto;
+    grid-gap: 65px;
+    height: 100vh;
+}
+
+.home-page-post-area {
+    max-width: 472px;
+    height: 400vh;
+}
+
+.home-page-avatar-area {
+    width: 320px;
+    height: 100vh;
+    padding: 30px 0 0;
+}
+
+.instagram-logo {
+    width: 312px;
+    height: 92px;
+}
+
+.main-logo {
+    margin: 0 0 19px;
+    padding: 25px 12px 16px;
+}
+
+.main-logo > .big-logo {
+    width: 113px;
+}
+
+.main-logo > .small-logo {
+    width: 24px;
+}
+
+.nav-items {
+    height: 56px;
+    width: 100%;
+}
+
+.nav-items >div {
+    position: relative;
+    display: flex;
+    font-size: 16px;;
+    margin: 4px 0;
+    padding: 12px;
+    align-items: center;
+}
+.nav-items a>div {
+    position: relative;
+    display: flex;
+    font-size: 16px;;
+    margin: 4px 0;
+    padding: 12px;
+    align-items: center;
+}
+
+.nav-items >a> div:hover {
+    overflow: hidden;
+    background-color: snow;
+    border-radius: 150px;
+}
+
+.nav-items >a> div:hover >*:not(a) {
+    transform: scale(1.07);
+}
+
+.red-badge {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 30px;
+    background-color: red;
+    color: white;
+    text-align: center;
+    line-height: 24px;
+    font-size: 12px;
+    position: absolute;
+    top: 5px;
+    left: 25px;
+}
+
+.profile_photo_small {
+    width: 24px;
+    height: 24px;
+    border-radius: 24px;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+.nav-items > div > *{
+    transition: transform 0.05s ease-out;
+    width: 28px;
+    margin-right: 16px;
+}
+.nav-items > a>div > *{
+    transition: transform 0.05s ease-out;
+    width: 28px;
+    margin-right: 16px;
+}
+
+.avatar-area-main-box {
+    font-size: 14px;
+    display: grid;
+    grid-template-columns:auto auto auto;
+    margin: 30px 0 0;
+}
+
+.avatar-name {
+    margin-top: 6px;
+}
+
+.avatar-name > #linked-username {
+    /*noinspection CssNoGenericFontName*/
+    font-family: 'Satoshi-Bold';
+}
+
+.profile-switch-and-follow-button {
+    /*noinspection CssNoGenericFontName*/
+    font-family: 'Satoshi-Bold';
+    color: rgb(0, 149, 246);
+    font-size: 12px;
+    margin-top: 17px;
+}
+
+.avatar-area-main-box > img {
+    width: 56px;
+    height: 56px;
+    border-radius: 56px;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+.avatar-area-suggestions {
+    font-size: 14px;
+    display: grid;
+    grid-template-columns:auto auto auto;
+    padding: 8px 8px;
+}
+
+.avatar-area-suggestions > img {
+    width: 32px;
+    height: 32px;
+    border-radius: 32px;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+.avatar-area-suggestions > div {
+    margin-top: -5px;
+    margin-left: -35px;
+}
+
+.avatar-area-suggestions > .profile-switch-and-follow-button {
+    text-align: right;
+}
+
+.story-area-box {
+    display: flex;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    flex-direction: row;
+    margin-top: 15px;
+    max-width: 100%;
+    height: 90px;
+}
+
+.story-area-box:hover {
+
+}
+
+.test-box {
+    margin-right: 12px;
+    display: inline-block;
+    height: 83px;
+    min-width: 67px;
+}
+
+.story-left-button {
+    width: 27px;
+    position: relative;
+    right: -10px;
+    top: 75px;
+    z-index: 5;
+}
+
+.story-right-button {
+    width: 27px;
+    position: relative;
+    top: -68px;
+    left: 435px;
+    z-index: 5;
+}
+
+.main-page-story-border {
+    position: relative;
+    width: calc(100% + 60px);
+    left: -30px;
+    top: -15px;
+    animation-play-state: paused;
+}
+
+.main-page-story-pp {
+    position: relative;
+    width: 61px;
+    height: 61px;
+    border-radius: 64px;
+    object-fit: cover;
+    object-position: 50% 50%;
+    left: 3px;
+    top: -98px;
+}
+
+.main-page-story-username {
+    overflow-x: hidden;
+    position: relative;
+    top: -100px;
+    left: 10px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #262626;
+}
+
+.post-element-container{
+    border-bottom: 1px solid #DBDBDB;
+    max-width: 468px ;
+    height:auto ;
+    margin: 0 0 12px;
+    padding: 0 0 20px;
+}
+.post-element-upper-bar{
+    display: flex;
+    flex-direction: row;
+    max-width: 464px;
+    height: 58px;
+}
+.post-element-upper-bar-icon{
+    width: 34px;
+    height: 34px;
+    border-radius: 34px;
+    object-fit: cover;
+    object-position: 50% 50%;
+    margin-top: 12px;
+    margin-left: 5px;
+}
+.post-element-upper-bar-username{
+    /*noinspection CssNoGenericFontName*/
+    font-family: 'Satoshi-Bold';
+    margin-top: 16px;
+    margin-left: 7px;
+}
+.post-element-upper-bar-date{
+    margin-top: 18px;
+    margin-left: 7px;
+    font-size: 14px;
+    color: #8e8e8e;
+}
+.post-element-upper-bar-button{
+    margin-top: 16px;
+    margin-right: 5px;
+    margin-left: auto;
+    text-decoration: none;
+
+}
+
+.video-player-play-button{
+    position: absolute;
+    width: 15%;
+    top: 50%;
+    right: 0;
+    bottom: 0;
+    left: 45%;
+    opacity: 85%;
+}
+.video-player-mute-button{
+    position: absolute;
+    width: 5%;
+    bottom:0;
+    right: 0;
+    margin-right: 7%;
+    margin-bottom: 7%;
+}
+.passive-heart{
+    top:25%;
+    fill:black;
+}
+.active-heart{
+    top:25%;
+    fill:red;
+    animation-name: like-animation;
+    animation-duration: 0.3s;
+}
+@keyframes like-animation {
+    0%   {}
+    50%  {transform: scale(1.3)}
+    100% {}
+}
+.post-element-bottom-bar{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin: 4px 0 0;
+    padding: 0 0 6px;
+    height: 7%;
+    max-width: 470px;
+}
+.post-element-bottom-bar > * {
+    margin-top: 2%;
+    margin-right: 4%;
+}
+.post-element-upper-bar-username:hover,
+.post-element-upper-bar-button:hover
+{color: #929292;}
+
+.post-element-bottom-bar-comment-area{
+    margin-top: 10px;
+    font-size: 14px;
+    border: none;
+    outline: none;
+}
+.image_viewer{
+    display: flex;
+    background-color: black;
+    width: 100%;
+    max-height: 585px;
+}
+.login-page-main-area-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    border: 1px solid #DBDBDB;
+    border-radius: 5px;
+    height: 727px;
+    width: 350px;
+    margin: 5% auto auto;
+}
+.login-page-main-area-container >input{
+    border:solid #DBDBDB;
+}
+.login-page-main-area-container *{
+    margin-bottom: 20px;
+}
+.login-page-instagram-logo{
+    margin-top: 20%;
+    width: 175px;
+    overflow-x: hidden;
+}
+.login-page-login-area{
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+
+}
+.login-page-bottom-area{
+    position: absolute;
+    bottom:50px;
+    left: 25%;
+}
+.login-page-bottom-area *{
+    margin-left: 20px;
+    text-decoration: none;
+    color: #8e8e8e;
+}
+
+.background-filter {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 3;
+}
+.info-box {
+    box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.5);
+    border: 1px solid #8e8e8e;
+    position: fixed;
+    background-color: white;
+    text-align: center;
+    top:-100vh;
+    animation: slide-in 0.5s linear;
+    animation-fill-mode: forwards;
+    left:30%;
+    width: 30%;
+    border-radius: 10px;
+    padding: 5%;
+    font-size: 100%;
+}
+@keyframes slide-in {
+    from {
+        top: -100vh;
+    }
+    to {
+        top: 1vh;
+    }
+}
+.info-box>h1{
+    background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 200%;
+    font-weight: bold;
+}
+.message-page-user-container{
+    padding: 8px 20px;
+    display: grid;
+    grid-template-columns: 23.5% auto;
+}
+.message-page-user-container:hover{
+    background-color: #FAFAFA;
+}
+.message-page-container{
+    position: absolute;
+    right: 0;
+    width: 81%;
+    height: 100%;
+}
+.message-page-main-area{
+    display: grid;
+    grid-template-columns: 350px auto ;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    height: 94vh;
+    margin: 3vh auto;
+    max-width: 900px;
+    outline: 1px solid #DBDBDB;
+}
+.message-page-left-area{
+    display: grid;
+    grid-template-rows: 60px auto;
+    outline: 1px solid #DBDBDB;
+    outline-offset: 2px;
+}
+.message-page-right-area{
+    position: relative;
+    margin: auto;
+    text-align: center;
+}
+.message-page-left-area-upper{
+    /*noinspection CssNoGenericFontName*/
+    font-family: 'Satoshi-Bold';
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    outline: 1px solid #DBDBDB;
+    outline-offset: 2px;
+    justify-content: center;
+
+}
+.message-page-left-area-bottom{
+    overflow-y: auto;
+}
+.message-page-send-message-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    border-radius: 10px;
+    color: white;
+    background-color: #0095F6;
+    width: 120px;
+    height: 32px;
+}
+
+.message-page-user-pp{
+    width: 56px;
+    height: 56px;
+    border-radius: 56px;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+.message-page-user-info-container{
+    font-size: 14px;
+    position: relative;
+    margin: auto auto auto 0;
+}
+.message-page-user-name{
+
+}
+.message-page-last-message{
+    display: flex;
+    flex-direction: row;
+    color: #8e8e8e;
+}
+.message-page-message-area-container{
+    display: grid;
+    grid-template-rows: 60px auto;
+    overflow-y: hidden;
+}
+.message-page-message-area-upper-bar{
+    /*noinspection CssNoGenericFontName*/
+    font-family: 'Satoshi-Bold';
+    padding-top: 3%;
+    outline: 1px solid #DBDBDB;
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.message-page-message-area-pp{
+    margin-right: 5px;
+    width: 24px;
+    height: 24px;
+    border-radius: 24px;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+.message-element-container{
+    max-width: 40%;
+    font-size: 14px;
+    border: 1px solid #EFEFEF;
+    border-radius: 25px;
+    padding: 2%;
+    width: fit-content;
+    text-align: left;
+    margin: 10px;
+    right: 0;
+}
+.message-page-message-area-messaging-area{
+    position: relative;
+    flex-direction: column;
+    overflow-y: scroll;
+    height: 710px!important;
+    margin-bottom: 30px;
+    padding: 20px;
+    overflow-x: clip;
+}
+.message-page-message-area-messaging-area-bottom{
+    display: flex;
+    position: fixed;
+    bottom: 4%;
+    min-width: 29%;
+    flex-direction: column;
+    height: 80px;
+    max-height: 150px;
+}
+.message-page-message-area-message-box{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    padding: 0 8px 0 11px;
+    margin: auto 10px;
+    width: 90%;
+    height: 55%;
+    max-height: 90%;
+    border: 1px solid #DBDBDB;
+    border-radius: 25px;
+}
+.message-page-message-area-message-box *{
+    margin: auto;
+    margin-left:2%;
+}
+.message-box{
+    /*noinspection CssNoGenericFontName*/
+    font-family: 'Satoshi-Regular';
+    font-size: 14px;
+    color: black;
+    border-color: transparent;
+    outline-width: 0;
+    width: 83%!important;
+    resize: none;
+    height: 18px;
+    max-height: 400px;
+    overflow-y: auto;
+    padding:8px 9px;
+}
+.instagram-loading-container{
+    position: fixed;
+    left: 0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color: white;
+}
+.instagram-loading-container>#instagram{
+    background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 1420px) {
+    .homepage-box-container {
+        grid-template-columns: 70px 1fr;
+    }
+
+    .nav-items >a>div{
+        font-size: 0;
+    }
+
+    .homepage-navbar {
+        width: 70px;
+    }
+}
+
+@media only screen and (max-width: 1075px) {
+
+
+    .home-page-avatar-area {
+        display: none;
+        width: 0;
+        height: 0;
+    }
+
+    .homepage-main-area {
+        grid-template-columns: auto 470px 0 auto;
+    }
+
+}
+
+@media only screen and (max-width: 770px) {
+    .homepage-box-container {
+        grid-template-columns: 100%;
+    }
+
+    .homepage-navbar {
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 30px;
+        padding-top: 0;
+    }
+
+    .homepage-main-area {
+        margin-left: auto;
+        grid-gap: 0;
+    }
+
+    .home-page-upper-navbar {
+        background-color: deeppink;
+        position: fixed;
+        height: 60px;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+    .story-area-box {
+        margin-top: 45px;
+    }
+    .nav-items {
+        display: flex;
+        flex-direction: row;
+        height: 49px;
+        width: 100%;
+        justify-content: center;
+    }
+    .message-page-container{
+        right: unset;
+        width: 99%;
+    }
+    .nav-items a> div {
+        font-size: 0;
+        position: relative;
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+
+        align-items: center;
+    }
+    .instagram-logo{
+        display: none;
+    }
+    .nav-items .navbar-mobile-custom{
+        display: none;
+    }
+    .story-left-button {
+        top: 105px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .homepage-main-area {
+        display: flex;
+    }
+
+    .home-page-post-area {
+        width: 90%;
+        margin-left: 5px;
+    }
+
+    .story-right-button {
+
+        position: relative;
+        left: 90%;
+
+    }
+}
+
+
