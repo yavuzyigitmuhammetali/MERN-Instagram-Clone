@@ -29,15 +29,9 @@
 "During my second week of web programming, I started a project with the sole purpose of improving myself. I would greatly appreciate any feedback on my mistakes and areas where I need improvement. Thank you in advance."
 
 ![](https://raw.githubusercontent.com/yavuzyigitmuhammetali/MERN-Instagram-Clone/master/images-main/Animation.gif)
-![Screen Shot](
-https://raw.githubusercontent.com/yavuzyigitmuhammetali/images/main/Animation2.gif?token=GHSAT0AAAAAAB7YGCTC3DDZIXQW7GV7A5XIZAIX4LA
-)
-![Screen Shot](
-https://raw.githubusercontent.com/yavuzyigitmuhammetali/images/main/Animation3.gif?token=GHSAT0AAAAAAB7YGCTC45R24OPMZ63XTQMEZAIYBLA
-)
-![Screen Shot](
-https://raw.githubusercontent.com/yavuzyigitmuhammetali/images/main/Animation4.gif?token=GHSAT0AAAAAAB7YGCTCLJ2CFOKJHAMJCVEMZAIYJRQ
-)
+![](https://github.com/yavuzyigitmuhammetali/MERN-Instagram-Clone/blob/master/images-main/Animation2.gif)
+![](https://github.com/yavuzyigitmuhammetali/MERN-Instagram-Clone/blob/master/images-main/Animation3.gif)
+![](https://github.com/yavuzyigitmuhammetali/MERN-Instagram-Clone/blob/master/images-main/Animation3.gif)
 
 
 
