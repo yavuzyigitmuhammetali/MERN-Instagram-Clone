@@ -28,8 +28,7 @@
 
 "During my second week of web programming, I started a project with the sole purpose of improving myself. I would greatly appreciate any feedback on my mistakes and areas where I need improvement. Thank you in advance."
 
-![Screen Shot](https://raw.githubusercontent.com/yavuzyigitmuhammetali/images/main/Animation.gif?token=GHSAT0AAAAAAB7YGCTDRC2SADVOPUTBHNAOZAIWMRQ
-)
+![](https://raw.githubusercontent.com/yavuzyigitmuhammetali/images/main/Animation.gif?token=GHSAT0AAAAAAB7YGCTDRC2SADVOPUTBHNAOZAIWMRQ)
 ![Screen Shot](
 https://raw.githubusercontent.com/yavuzyigitmuhammetali/images/main/Animation2.gif?token=GHSAT0AAAAAAB7YGCTC3DDZIXQW7GV7A5XIZAIX4LA
 )
