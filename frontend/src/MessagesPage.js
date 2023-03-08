@@ -6,71 +6,65 @@ import {useDispatch, useSelector} from "react-redux";
 import {SET_LOADING} from "./redux/features/main/mainSlice";
 import {getBasicInfo, getMessages, linkedUsers, sendMessage} from "./services/messageService";
 import MessageElement from "./MessageElement";
-import MessageSendBox from "./MessageSendBox";
 
 import io from "socket.io-client";
 const socket = io("http://localhost:4000/");
 
 function MessagesPage() {
-    // const [isConnected, setIsConnected] = useState(socket.connected);
-    // const [lastPong, setLastPong] = useState(null);
-    //
-    // useEffect(() => {
-    //     socket.on('connect', () => {
-    //         setIsConnected(true);
-    //     });
-    //
-    //     socket.on('disconnect', () => {
-    //         setIsConnected(false);
-    //     });
-    //
-    //     socket.on('pong', () => {
-    //         setLastPong(new Date().toISOString());
-    //         console.log(lastPong)
-    //     });
-    //     return () => {
-    //         socket.off('connect');
-    //         socket.off('disconnect');
-    //         socket.off('pong');
-    //     };
-    // }, []);
-    //
-    const [response, setResponse] = useState([]);
-
-
-
-
+    const [isConnected, setIsConnected] = useState(socket.connected);
     const dispatch = useDispatch();
     const user = useSelector((state) => state.auth.user)
     const [users, setUsers] = useState([]);
-    const [messages,setMessages] = useState([]);
+    const [messagesState,setMessagesState] = useState([]);
     const [selectedUser,setSelectedUser] = useState("")
     const [selectedUserBasic,setSelectedUserBasic] = useState({});
 
-
-
     useEffect(() => {
-            socket.on(selectedUserBasic._id, data => {
-                console.log(data);
-            });
+        socket.on('connect', () => {
+            setIsConnected(true);
+        });
 
-    }, []);
+        socket.on('disconnect', () => {
+            setIsConnected(false);
+        });
+
+        socket.on(
+            user._id, data => {
+            const {from,messages} = data;
+            if (from===selectedUserBasic._id){
+                const tmp = {senderId:from,text:messages,isRead:false}
+                const tmp2 = [...messagesState,tmp]
+                setMessagesState(tmp2)
+
+            }
+        })
+        return () => {
+            socket.off('connect');
+            socket.off('disconnect');
+            socket.off(user._id);
+        };
+    }, [user,selectedUserBasic,messagesState]);
+
+
 
     const [text, setText] = useState('');
     const pressEnter=(event)=>{
         if(event.keyCode===13){
             sendMessage(selectedUser,text)
-            socket.emit("messages",{user:selectedUserBasic._id,messages:text})
-            console.log(text);
+            socket.emit("messages",{from:user._id,to:selectedUserBasic._id,messages:text})
+            const tmp = {senderId:user._id,text:text,isRead:false}
+            const tmp2 = [...messagesState,tmp]
+            setMessagesState(tmp2)
             setText('');
             event.preventDefault();
         }
     }
 
+
     const getMessageByUsername = (userName)=>{
         getMessages(userName).then(data=>{
             const dataArray = Object.values(data);
-            setMessages([...dataArray[0]])
+            setMessagesState([...dataArray[0]])
         })
         getBasicInfo({userName:selectedUser}).then(data=>{
             setSelectedUserBasic(data)
@@ -89,11 +83,7 @@ function MessagesPage() {
 
     useEffect(() => {
         if(selectedUser.length!==0){
-            const interval = setInterval(() => {
                 getMessageByUsername(selectedUser)
-            }, 1000);
-
-            return () => clearInterval(interval);
         }else {
             setSelectedUser("")
         }
@@ -137,10 +127,10 @@ function MessagesPage() {
                         </div>
                     </div>
 
-                    {messages.length?
+                    {messagesState.length?
                         <div>
                             <MessageArea userName={selectedUserBasic.name} pp={require("./photos/"+selectedUserBasic.ppLink)} >
-                                {messages.map((m,index)=>{
+                                {messagesState.map((m,index)=>{
                                         if(selectedUserBasic._id!==m.senderId){
                                             return(<MessageElement key={index}>{m.text}</MessageElement>)
                                         }else{
@@ -161,7 +151,7 @@ function MessagesPage() {
                                     <textarea style={{height:"inherit",marginTop:"0.8%",maxHeight:"50%"}} value={text} onKeyDown={pressEnter} placeholder="Message..." className="message-box" onChange={event=>{setText(event.target.value);}}>
             </textarea>
                                     {text.length!==0?
-                                        <div onClick={()=>console.log(text)} style={{fontWeight:"bold", marginRight:"10px",color:"#0095F6"}}>Send</div>
+                                        <div style={{fontWeight:"bold", marginRight:"10px",color:"#0095F6"}}>Send</div>
                                         :
                                         <div style={{display:"flex",flexDirection:"row"}}>
                                             <svg style={{marginRight:"8px"}} aria-label="Add Photo or Video" className="_ab6-" color="rgb(38, 38, 38)" fill="rgb(38, 38, 38)"

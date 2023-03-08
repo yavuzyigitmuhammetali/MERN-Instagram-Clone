@@ -14,22 +14,17 @@ const app = express();
 // socket
 const http = require("http");
 
-
 const SOCKET_PORT = 4000;
 const server = http.createServer(app);
-const io = require('socket.io')(server, {cors: {origin: '*',credentials:true}});
-
-
-
-
+const io = require('socket.io')(server, {cors: {origin: 'http://localhost:3000',credentials:true}});
 
 
 io.on("connection", (socket) => {
     console.log("New client connected");
     socket.on("messages",data=>{
-        const {user,messages} = data
-        console.log(user)
-        socket.emit(user,messages);
+        const {from,to,messages} = data
+        console.log(data)
+        socket.broadcast.emit(to,{from:from,messages:messages});
     })
 
     socket.on("disconnect", () => {

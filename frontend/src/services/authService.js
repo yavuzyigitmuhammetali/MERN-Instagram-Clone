@@ -26,3 +26,17 @@ export const getUserProfile = async  () =>{
     }
 }
 
+export const getItemWithExpiry = (key)=> {
+    const itemString = localStorage.getItem(key);
+    if (!itemString) {
+        return null;
+    }
+    const item = JSON.parse(itemString);
+    const now = new Date();
+    if (now.getTime() > item.expiry) {
+        localStorage.removeItem(key);
+        return null;
+    }
+    return item.value;
+}
+
