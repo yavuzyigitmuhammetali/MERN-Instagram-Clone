@@ -31,7 +31,7 @@
 ![](https://raw.githubusercontent.com/yavuzyigitmuhammetali/MERN-Instagram-Clone/master/images-main/Animation.gif)
 ![](https://github.com/yavuzyigitmuhammetali/MERN-Instagram-Clone/blob/master/images-main/Animation2.gif)
 ![](https://github.com/yavuzyigitmuhammetali/MERN-Instagram-Clone/blob/master/images-main/Animation3.gif)
-![](https://github.com/yavuzyigitmuhammetali/MERN-Instagram-Clone/blob/master/images-main/Animation3.gif)
+![](https://github.com/yavuzyigitmuhammetali/MERN-Instagram-Clone/blob/master/images-main/Animation4.gif)
 
 
 
