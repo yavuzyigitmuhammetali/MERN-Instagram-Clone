@@ -16,7 +16,7 @@
     .
     <a href="https://github.com/yavuzyigitmuhammetali/MERN-Instagram-Clone/issues">Request Feature</a>
   </p>
-</p>
+
 
 ![Downloads](https://img.shields.io/github/downloads/yavuzyigitmuhammetali/MERN-Instagram-Clone/total) ![Contributors](https://img.shields.io/github/contributors/yavuzyigitmuhammetali/MERN-Instagram-Clone?color=dark-green) ![Stargazers](https://img.shields.io/github/stars/yavuzyigitmuhammetali/MERN-Instagram-Clone?style=social) ![Issues](https://img.shields.io/github/issues/yavuzyigitmuhammetali/MERN-Instagram-Clone) ![License](https://img.shields.io/github/license/yavuzyigitmuhammetali/MERN-Instagram-Clone) 
 
