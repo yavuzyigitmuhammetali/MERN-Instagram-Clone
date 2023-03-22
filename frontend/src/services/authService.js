@@ -40,3 +40,12 @@ export const getItemWithExpiry = (key)=> {
     return item.value;
 }
 
+export async function searchUser(userName) {
+    try {
+        const response = await axios.post("http://localhost:5000/api/users/searchuser", {userName:userName});
+            return response.data;
+    } catch (error) {
+        return error
+    }
+}
+

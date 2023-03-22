@@ -1,10 +1,9 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+
 
 function MessagesPageUsers({profilePicture,name,lastMessage,time,active}) {
     return (
-        <Link>
-            <div>
+            <div style={{cursor:"pointer"}}>
                 <div className="message-page-user-container" style={active&&{backgroundColor:"#EFEFEF"}}>
                     <img className="message-page-user-pp" style={{maxWidth:"100%"}} src={profilePicture} alt="pp"/>
                     <div className="message-page-user-info-container" style={{position:"relative"}}>
@@ -13,7 +12,6 @@ function MessagesPageUsers({profilePicture,name,lastMessage,time,active}) {
                     </div>
                 </div>
             </div>
-        </Link>
     );
 }
 

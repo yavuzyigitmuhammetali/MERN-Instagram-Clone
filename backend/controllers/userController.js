@@ -204,6 +204,31 @@ const getBasicInfo = asyncHandler(async (req, res) => {
     }
 })
 
+const searchUser = asyncHandler(async (req, res) => {
+    const {userName} = req.body;
+    if (userName.length>=1){
+        const users = await User.find({ userName: { $regex: `^${userName}`, $options: 'i' } })
+            .limit(6);
+        if ((users)&&(users.length)){
+            const userNames = []
+            users.forEach(user=>{
+                userNames.push({
+                    name:user.name,
+                    userName:user.userName,
+                    ppLink:user.ppLink
+                })
+            })
+            res.status(200).json(userNames)
+        }
+        else {
+            res.status(200).json([])
+        }
+    }else{
+        res.status(200).json([])
+    }
+
+})
+
 
 
 module.exports = {
@@ -212,5 +237,6 @@ module.exports = {
     logout,
     getUser,
     loginStatus,
-    getBasicInfo
+    getBasicInfo,
+    searchUser
 }

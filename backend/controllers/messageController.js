@@ -1,8 +1,5 @@
 const asyncHandler = require("express-async-handler")
-const mongoose = require('mongoose');
 const Message = require("../models/messageModel")
-const jwt = require("jsonwebtoken")
-const bcrypt = require("bcryptjs")
 const User = require("../models/userModel")
 
 
@@ -39,6 +36,7 @@ const getMessagesById = asyncHandler(async (req,res)=>{
         throw new Error("An error occurred while connecting to the server")
     }
 })
+
 
 module.exports={
     sendMessage,

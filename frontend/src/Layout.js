@@ -4,6 +4,7 @@ import HomePage from "./HomePage";
 import {Route, Routes} from "react-router-dom";
 import MessagesPage from "./MessagesPage";
 
+
 function Layout() {
     return (
         <div>
@@ -15,11 +16,9 @@ function Layout() {
                 </div>
         </div>
             <Routes>
-                <Route path="/">
-                    <Route index element={<HomePage/>} />
-                    <Route path="/direct/inbox/" element={<MessagesPage/>} />
-                    {/*<Route path="*" element={<NoPage />} />*/}
-                </Route>
+                <Route index element={<HomePage/>} />
+                <Route path="/" element={<HomePage/>} />
+                <Route path="/direct/*" element={<MessagesPage/>}/>
             </Routes>
 
         </div>

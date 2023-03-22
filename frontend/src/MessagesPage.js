@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Link} from "react-router-dom";
+import {Link, Route, Routes} from "react-router-dom";
 import MessagesPageUsers from "./MessagesPageUsers";
 import MessageArea from "./MessageArea";
 import {useDispatch, useSelector} from "react-redux";
@@ -8,6 +8,7 @@ import {getBasicInfo, getMessages, linkedUsers, sendMessage} from "./services/me
 import MessageElement from "./MessageElement";
 
 import io from "socket.io-client";
+import SendMessageBox from "./SendMessageBox";
 const socket = io("http://localhost:4000/");
 
 function MessagesPage() {
@@ -79,7 +80,7 @@ function MessagesPage() {
             dispatch(SET_LOADING(false))
         });
 
-    }, []);
+    }, [dispatch]);
 
     useEffect(() => {
         if(selectedUser.length!==0){
@@ -91,6 +92,9 @@ function MessagesPage() {
 
     return (
         <div>
+            <Routes>
+                <Route path="/new/" element={<SendMessageBox/>} />
+            </Routes>
             <div className="message-page-container">
                 <div className="message-page-main-area">
                     <div className="message-page-left-area">
@@ -190,11 +194,9 @@ function MessagesPage() {
                             </svg>
                             <h3>Your Messages</h3>
                             <h5 className="all-gray">Send private photos and messages to a friend or group.</h5>
-                            <Link to="http://localhost:3000/direct/new/">
-                                <div className="message-page-send-message-button">
-                                    <div>Send Message</div>
-                                </div>
-                            </Link>
+                                <Link to="/direct/new"><div className="message-page-send-message-button">
+                                    <div >Send Message</div>
+                                </div></Link>
                         </div>
                     }
 
