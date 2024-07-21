@@ -26,7 +26,10 @@
 
 ## About The Project
 
-"During my second week of web programming, I started a project with the sole purpose of improving myself. I would greatly appreciate any feedback on my mistakes and areas where I need improvement. Thank you in advance."
+"In the second week of my web programming training, I started a project to improve myself.
+
+!!!Update: I promised to continue the project when it got 5 stars, I plan to continue the project soon, I am waiting for your feedback.
+"
 
 ![](https://raw.githubusercontent.com/yavuzyigitmuhammetali/MERN-Instagram-Clone/master/images-main/Animation.gif)
 ![](https://github.com/yavuzyigitmuhammetali/MERN-Instagram-Clone/blob/master/images-main/Animation2.gif)
